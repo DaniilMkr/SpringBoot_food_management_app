@@ -1,6 +1,6 @@
 package com.daniil.makarov.myApp.entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,9 +14,16 @@ import java.util.Calendar;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "product")
 public abstract class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String name;
+    @Column
     private Calendar dateOfExpiration;
+    @Column
     private boolean isSolid;
+
 }
