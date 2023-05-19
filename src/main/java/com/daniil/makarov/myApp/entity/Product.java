@@ -15,7 +15,7 @@ import java.util.Calendar;
 @Getter
 @Setter
 @Table(name = "product")
-public abstract class Product {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +23,5 @@ public abstract class Product {
     private String name;
     @Column
     private Calendar dateOfExpiration;
-    @Column
-    private boolean isSolid;
 
 }

@@ -13,8 +13,6 @@ public class FoodManagementAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FoodManagementAppApplication.class, args);
 
-		Vegetables vegetables = new Vegetables();
-		Fruits fruits = new Fruits();
 	}
 
 }
