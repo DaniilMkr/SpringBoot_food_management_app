@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 @Getter
@@ -12,8 +14,7 @@ import java.util.Calendar;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDto {
-    @Id
     private Long id;
     private String name;
-    private Calendar dateOfExpiration;
+    private String dateOfExpiration;
 }
