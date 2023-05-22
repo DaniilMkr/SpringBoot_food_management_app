@@ -47,7 +47,7 @@
         <tbody>
         <tr th:each="product : ${products}">
             <td th:text="${product.name}"></td>
-            <td th:text="${product.dateOfExpiration}"></td>
+            <td th:date="${product.dateOfExpiration}"></td>
             <td>
                 <a class="btn btn-primary" th:href="#">Edit</a>
                 <a class="btn btn-danger" th:href="#">Delete</a>

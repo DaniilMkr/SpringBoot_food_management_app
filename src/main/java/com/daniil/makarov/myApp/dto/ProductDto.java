@@ -5,9 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDateTime;
-import java.util.Calendar;
+import java.sql.Date;
+import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -16,5 +18,5 @@ import java.util.Calendar;
 public class ProductDto {
     private Long id;
     private String name;
-    private String dateOfExpiration;
+    private LocalDate dateOfExpiration;
 }

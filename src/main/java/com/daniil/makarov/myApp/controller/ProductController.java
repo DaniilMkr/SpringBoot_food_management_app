@@ -3,12 +3,18 @@ package com.daniil.makarov.myApp.controller;
 import com.daniil.makarov.myApp.dto.ProductDto;
 import com.daniil.makarov.myApp.service.ProductService;
 import lombok.AllArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Controller
 @AllArgsConstructor
@@ -56,13 +62,15 @@ public class ProductController {
 
     @PostMapping("/products")
     public String saveProduct(@ModelAttribute("product") ProductDto productDto,
-                              BindingResult bindingResult, Model model){
+                              BindingResult bindingResult,
+                              Model model,
+                              @RequestParam ("dateOfExpiration") LocalDate localDate){
         if (bindingResult.hasErrors()){
             model.addAttribute("product", productDto);
         return "add_item";
         }
         productService.addProduct(productDto);
-        return "redirect:/products";
+        return "redirect:/add_item";
 
     }
 
