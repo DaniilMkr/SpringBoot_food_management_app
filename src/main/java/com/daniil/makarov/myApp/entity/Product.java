@@ -8,10 +8,10 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Calendar;
+import java.util.Date;
 
 
 @Entity
@@ -26,7 +26,9 @@ public class Product {
     private Long id;
     @Column
     private String name;
-    @Column
+//    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd-MMM-YYYY")
+
     private LocalDate dateOfExpiration;
 
 }
