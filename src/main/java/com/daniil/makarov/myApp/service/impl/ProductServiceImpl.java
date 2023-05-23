@@ -8,6 +8,9 @@ import com.daniil.makarov.myApp.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Service
 @AllArgsConstructor
@@ -22,4 +25,12 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(product);
     }
 
+    @Override
+    public List<ProductDto> getAllProducts() {
+        List<Product> products = productRepository.findAll();
+        List<ProductDto> productDto = products.stream()
+                .map((product) -> ProductMapper.mapToDto(product))
+                .collect(Collectors.toList());
+        return productDto;
+    }
 }
