@@ -26,9 +26,8 @@ public class Product {
     private Long id;
     @Column
     private String name;
-//    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd-MMM-YYYY")
-
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd-MMM-YYYY")
     private LocalDate dateOfExpiration;
 
 }

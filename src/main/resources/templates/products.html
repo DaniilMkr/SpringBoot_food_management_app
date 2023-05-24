@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" th:href="@{/add_item}">Manage items</a>
+                    <a class="nav-link" aria-current="page" th:href="@{/add_item}">Add new item</a>
                 </li>
             </ul>
         </div>
@@ -49,9 +49,9 @@
             <td class="text-center" th:text="${product.dateOfExpiration}"></td>
             <td>
                 <div class="container text-center">
-                    <button class="btn btn-primary mx-1" th:href="@{products/}">Edit</button>
-                    <button class="btn btn-danger mx-1" th:href="@{products/}">Delete</button>
-                    <button class="btn btn-info mx-1" th:href="@{products/}">View</button>
+                    <a class="btn btn-primary mx-1" th:href="@{/products/{productId}/edit(productId=${product.id})}">Edit</a>
+                    <a class="btn btn-danger mx-1" th:href="@{/products/{productId}/delete(productId=${product.id})}">Delete</a>
+                    <a class="btn btn-info mx-1" th:href="@{/products}">View</a>
                 </div>
             </td>
         </tr>

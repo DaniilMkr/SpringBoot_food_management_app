@@ -33,4 +33,21 @@ public class ProductServiceImpl implements ProductService {
                 .collect(Collectors.toList());
         return productDto;
     }
+
+    @Override
+    public void deleteById(Long id) {
+        productRepository.deleteById(id);
+    }
+
+    @Override
+    public void editProduct(ProductDto productDto) {
+        productRepository.save(ProductMapper.mapToProduct(productDto));
+    }
+
+    @Override
+    public ProductDto getProductById(Long id) {
+        Product product = productRepository.findById(id).get();
+        ProductDto productDto = ProductMapper.mapToDto(product);
+        return productDto;
+    }
 }

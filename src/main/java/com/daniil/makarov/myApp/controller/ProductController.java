@@ -8,10 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -51,6 +48,26 @@ public class ProductController {
         model.addAttribute("product", productDto);
         return "add_item";
     }
+
+    // Handler method to edit Product
+    @GetMapping("/products/{productId}/edit")
+    public String editProduct(@PathVariable("productId")Long id, Model model) {
+        ProductDto productDto = productService.getProductById(id);
+        model.addAttribute("product", productDto);
+        return "edit_product";
+    }
+
+
+    // Handler method to delete product by id
+
+    // http://localhost:8090/products/20/delete
+
+    @GetMapping("/products/{productId}/delete")
+    public String deleteProduct(@PathVariable("productId") Long id){
+        productService.deleteById(id);
+        return "redirect:/products";
+    }
+
 
     // Handler method to save new Product
 
