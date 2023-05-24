@@ -1,7 +1,6 @@
 package com.daniil.makarov.myApp.service;
 
 import com.daniil.makarov.myApp.dto.ProductDto;
-
 import java.util.List;
 
 public interface ProductService {
@@ -12,6 +11,7 @@ public interface ProductService {
 
     void deleteById(Long id);
 
-    void editProduct(ProductDto productDto);
+    void updateProduct(ProductDto productDto);
     ProductDto getProductById(Long id);
+
 }

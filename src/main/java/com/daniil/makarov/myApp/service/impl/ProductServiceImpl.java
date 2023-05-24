@@ -7,7 +7,6 @@ import com.daniil.makarov.myApp.repository.ProductRepository;
 import com.daniil.makarov.myApp.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,14 +16,14 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
-
-    // Save product into database
+    // Build save product into database method
     @Override
     public void addProduct(ProductDto productDto) {
         Product product = ProductMapper.mapToProduct(productDto);
         productRepository.save(product);
     }
 
+    // Build get all products method
     @Override
     public List<ProductDto> getAllProducts() {
         List<Product> products = productRepository.findAll();
@@ -34,16 +33,19 @@ public class ProductServiceImpl implements ProductService {
         return productDto;
     }
 
+    // Build delete by id method
     @Override
     public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
 
+    // Build update product method
     @Override
-    public void editProduct(ProductDto productDto) {
+    public void updateProduct(ProductDto productDto) {
         productRepository.save(ProductMapper.mapToProduct(productDto));
     }
 
+    // Build get product by id method
     @Override
     public ProductDto getProductById(Long id) {
         Product product = productRepository.findById(id).get();
