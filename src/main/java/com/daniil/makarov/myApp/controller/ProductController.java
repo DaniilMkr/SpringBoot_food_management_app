@@ -60,12 +60,10 @@ public class ProductController {
     }
 
     @PostMapping("/products/{productId}")
-    public String updateProduct(@PathVariable("productId")
-                                @ModelAttribute("product")
+    public String updateProduct(@Valid @ModelAttribute("product") ProductDto productDto,
+                                BindingResult bindingResult, @PathVariable("productId")
                                 Long id,
-                                ProductDto productDto,
-                                Model model,
-                                BindingResult bindingResult){
+                                Model model){
         if(bindingResult.hasErrors()){
             model.addAttribute("product", productDto);
             return "edit_product";
@@ -76,10 +74,9 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public String saveProduct(@ModelAttribute("product") ProductDto productDto,
+    public String saveProduct(@Valid @ModelAttribute("product") ProductDto productDto,
                               BindingResult bindingResult,
-                              Model model,
-                              @RequestParam ("dateOfExpiration") LocalDate dateOfExpiration){
+                              Model model){
         if (bindingResult.hasErrors()){
             model.addAttribute("product", productDto);
         return "add_item";
