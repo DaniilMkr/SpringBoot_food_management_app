@@ -24,4 +24,6 @@ public class Product {
     @Column
     private LocalDate dateOfExpiration;
 
+
+
 }
