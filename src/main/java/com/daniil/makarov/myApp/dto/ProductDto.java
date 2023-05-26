@@ -24,4 +24,5 @@ public class ProductDto {
     @NotNull(message = "Expiration date should not be empty!")
     private LocalDate dateOfExpiration;
     private ProductCategories productCategories;
+
 }
