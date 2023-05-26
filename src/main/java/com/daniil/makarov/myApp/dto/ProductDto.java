@@ -1,12 +1,13 @@
 package com.daniil.makarov.myApp.dto;
 
+import com.daniil.makarov.myApp.entity.ProductCategories;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 
 import java.time.LocalDate;
@@ -22,4 +23,5 @@ public class ProductDto {
     private String name;
     @NotNull(message = "Expiration date should not be empty!")
     private LocalDate dateOfExpiration;
+    private ProductCategories productCategories;
 }

@@ -50,6 +50,15 @@ public class ProductController {
         return "edit_product";
     }
 
+    // Handler method to view Product
+    // http://localhost:8090/products/10/view
+    @GetMapping("/products/{productId}/view")
+    public String viewProduct(@PathVariable("productId") Long id, Model model) {
+        ProductDto productDto = productService.getProductById(id);
+        model.addAttribute("product", productDto);
+        return "view_product";
+    }
+
     // Handler method to delete product by id
     // http://localhost:8090/products/20/delete
 

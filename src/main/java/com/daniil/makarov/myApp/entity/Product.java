@@ -23,7 +23,8 @@ public class Product {
     private String name;
     @Column
     private LocalDate dateOfExpiration;
-
-
+    @Enumerated(EnumType.STRING)
+    @Column
+    private ProductCategories productCategories;
 
 }

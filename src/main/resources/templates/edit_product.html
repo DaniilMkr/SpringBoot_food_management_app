@@ -65,6 +65,16 @@
                     <p th:if="${#fields.hasErrors('dateOfExpiration')}" class="text-danger"
                        th:errors="*{dateOfExpiration}"></p>
                 </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">Select category of product</label>
+                    <select name="productCategories" th:field="*{productCategories}">
+                        <option th:each="productCategories : ${T(com.daniil.makarov.myApp.entity.ProductCategories).values()}"
+                                th:value="${productCategories}" th:text="${productCategories}">
+                        </option>
+                    </select>
+                    <p th:if="${#fields.hasErrors('productCategories')}" class="text-danger"
+                       th:errors="*{productCategories}"></p>
+                </div>
                 <button class="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>

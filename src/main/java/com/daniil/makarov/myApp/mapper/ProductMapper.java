@@ -10,8 +10,8 @@ public class ProductMapper {
         ProductDto productDto = new ProductDto(
                 product.getId(),
                 product.getName(),
-                product.getDateOfExpiration());
-
+                product.getDateOfExpiration(),
+                product.getProductCategories());
         return productDto;
     }
 
@@ -20,7 +20,8 @@ public class ProductMapper {
         Product product = new Product(
                 productDto.getId(),
                 productDto.getName(),
-                productDto.getDateOfExpiration());
+                productDto.getDateOfExpiration(),
+                productDto.getProductCategories());
         return product;
     }
 }

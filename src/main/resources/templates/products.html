@@ -40,6 +40,7 @@
         <tr>
             <th class="text-center">Product name</th>
             <th class="text-center">Product expiration</th>
+            <th class="text-center">Category of product</th>
             <th class="text-center">Actions</th>
         </tr>
         </thead>
@@ -47,11 +48,12 @@
         <tr th:each="product : ${products}">
             <td class="text-center" th:text="${product.name}"></td>
             <td class="text-center" th:text="${product.dateOfExpiration}"></td>
+            <td class="text-center" th:text="${product.productCategories}"></td>
             <td>
                 <div class="container text-center">
                     <a class="btn btn-primary mx-1" th:href="@{/products/{productId}/edit(productId=${product.id})}">Edit</a>
                     <a class="btn btn-danger mx-1" th:href="@{/products/{productId}/delete(productId=${product.id})}">Delete</a>
-                    <a class="btn btn-info mx-1" th:href="@{/products}">View</a>
+                    <a class="btn btn-info mx-1" th:href="@{/products/{productId}/view(productId=${product.id})}">View</a>
                 </div>
             </td>
         </tr>
