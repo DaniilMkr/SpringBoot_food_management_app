@@ -2,7 +2,9 @@ package com.daniil.makarov.myApp.controller;
 
 import com.daniil.makarov.myApp.dto.UserDto;
 import com.daniil.makarov.myApp.entity.User;
+import com.daniil.makarov.myApp.service.UserService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,7 +15,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class AuthController {
+    private UserService userService;
+
 
     // handler method to handle home page request
     @GetMapping("/index")
