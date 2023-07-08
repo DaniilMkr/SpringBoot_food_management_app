@@ -9,7 +9,7 @@ https://github.com/DaniilMkr/SpringBoot_food_management_app/assets/125893775/28b
 
 
 ## What's inside
-Project is based on the [Spring Boot](https://spring.io/projects/spring-boot) project and uses folowing packages :
+Project is based on the [Spring Boot](https://spring.io/projects/spring-boot) project and uses following packages:
 
 - Spring Data (Hibernate & Postgresql)
 - Spring Security
@@ -29,7 +29,7 @@ Postgresql is selected for this project.
 
 You will need to create a PostgreSQL database named food_management and add the credentials to /resources/application.properties.
 
-The default credentials are :
+The default credentials are:
 
 ```
 server.PORT=8090
