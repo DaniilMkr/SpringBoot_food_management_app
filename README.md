@@ -3,6 +3,9 @@
 
 Spring Boot Products Management App is designed to keep track of your products in database by CRUD operations. App implement authentication, validation and role features.
 
+https://github.com/DaniilMkr/SpringBoot_food_management_app/assets/125893775/28b59f68-bde0-4b9c-b6e3-c612c8a672f1
+
+
 
 
 ## What's inside
